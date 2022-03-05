@@ -1,0 +1,22 @@
+@import "~vuesax/dist/vuesax.min.css";
+@import "~boxicons/css/boxicons.min.css";
+
+.block {
+  width: 200px;
+
+  .image {
+    width: 100%;
+    transition: 2s;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+
+    img {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: translateX(150px);
+      border: 2px solid red;
+    }
+  }
+}
