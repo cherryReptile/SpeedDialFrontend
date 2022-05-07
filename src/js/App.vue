@@ -1,24 +1,23 @@
 <template>
   <div>
-      <register></register>
+    <transition name="fade" mode="out-in">
+      <component :is="this.$store.getters.GET_COMPONENT"></component>
+    </transition>
   </div>
 </template>
 
 <script>
-import Register from "./components/register.vue"
-
 export default {
-  components: {Register},
   props: [],
   data() {
     return {
+      user: null
     }
   },
   methods: {
 
   },
   mounted() {
-
   }
 }
 </script>
