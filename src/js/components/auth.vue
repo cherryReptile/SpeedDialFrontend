@@ -60,6 +60,10 @@ export default {
             this.resetErrors()
             this.resetInputs()
             loading.close()
+            if (!localStorage.getItem('token')) {
+              localStorage.setItem('token', response.data.token)
+              this.$store.commit('SET_COMPONENT', 'cabinet')
+            }
             console.log(response.data)
           })
           .catch(error => {
@@ -91,6 +95,11 @@ export default {
         password: ''
       },
       active: 0
+    }
+  },
+  mounted() {
+    if(localStorage.getItem('token')){
+      return this.$store.commit('SET_COMPONENT', 'cabinet')
     }
   }
 }
